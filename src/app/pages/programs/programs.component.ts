@@ -35,7 +35,7 @@ export class ProgramsComponent {
     {
       icon: 'fas fa-tools',
       title: 'Shipyard Welding Training',
-      description: 'Professional welding certification to enter the high-demand maritime and manufacturing industries.',
+      description: 'Professional welding training to enter the high-demand maritime and manufacturing industries.',
       requirements: ['18 years or older', 'Missouri resident (12-county region)', 'Meet WSTEP eligibility criteria']
     }
   ];
