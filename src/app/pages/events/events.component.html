@@ -27,7 +27,7 @@
           <p class="event-desc">{{ event.description }}</p>
         </div>
         <div class="event-action">
-          <a *ngIf="event.registerLink" [href]="event.registerLink" class="btn-register">
+          <a *ngIf="event.registerLink" [href]="event.registerLink" target="_blank" class="btn-register">
             Register
           </a>
         </div>

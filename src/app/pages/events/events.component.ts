@@ -17,7 +17,7 @@ export class EventsComponent {
       time: '1:00 PM – 3:00 PM',
       location: '700 W. Marshall St., Charleston, MO',
       description: 'Orientation for the upcoming Shipyard Welding cohort. Please bring a Photo ID, Social Security Card, and Birth Certificate.',
-      registerLink: '/shipyard-welding'
+      registerLink: 'https://connect.meettheneedinc.org/shipyard-welding'
     }
   ];
 
