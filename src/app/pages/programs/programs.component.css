@@ -179,6 +179,11 @@
   justify-content: center;
 }
 
+.trainings-cta {
+  text-align: center;
+  margin-top: 36px;
+}
+
 .training-card {
   background: white;
   border-radius: 12px;
