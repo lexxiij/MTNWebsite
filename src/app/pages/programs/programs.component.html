@@ -1,0 +1,158 @@
+<!-- PROGRAMS PAGE — Matches Pages 3–6 of your Canva design -->
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Programs & Services</h1>
+    <p>Building Futures. Fighting Hunger. Creating Opportunity.</p>
+  </div>
+</section>
+
+<!-- WSTEP Program Intro -->
+<section class="program-intro container">
+  <div class="program-badge">
+    <span>ARPA Grant Funded</span>
+    <h2>Work Skills Training & Education Program</h2>
+    <p class="badge-sub">(WSTEP)</p>
+  </div>
+  <div class="program-desc">
+    <p>
+      MTN, Inc. has been awarded a grant through the <strong>ARPA Missouri's DED Workforce
+      Development Training Grant</strong> to establish the Work Skills Training and Education
+      Program (WSTEP).
+    </p>
+    <p>
+      The program provides training and education to unemployed, underemployed, and displaced
+      adult workers in our community and twelve-county region. Participants will walk away with
+      job-readiness skills and certificates to begin a new career path.
+    </p>
+    <div class="grant-highlight">
+      <i class="fas fa-award"></i>
+      <strong>MTN, Inc. Awarded $2.5M for 3-Year Grant Period</strong>
+    </div>
+    <p class="free-banner">🎉 ALL TRAININGS ARE NO COST TO QUALIFIED PARTICIPANTS!</p>
+  </div>
+</section>
+
+<!-- Training Cards — *ngFor loops over the trainings array from the .ts file -->
+<section class="trainings-section">
+  <div class="container">
+    <h2>Available Trainings</h2>
+    <div class="trainings-grid">
+      <!-- *ngFor is Angular's loop — it creates one card per item in the array -->
+      <div class="training-card" *ngFor="let training of trainings">
+        <div class="training-icon">
+          <!-- Font Awesome free has no forklift icon, so we use a custom SVG for that one -->
+          @if (training.title === 'Forklift Training') {
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <!-- Mast -->
+              <rect x="6" y="2" width="2" height="13"/>
+              <!-- Upper fork -->
+              <rect x="1" y="10.5" width="7" height="1.5" rx="0.4"/>
+              <!-- Lower fork -->
+              <rect x="1" y="13.5" width="7" height="1.5" rx="0.4"/>
+              <!-- Carriage -->
+              <rect x="5.5" y="10.5" width="1" height="4.5"/>
+              <!-- Cab / body -->
+              <rect x="8" y="5" width="11" height="11" rx="1"/>
+              <!-- Counterweight -->
+              <rect x="19" y="9" width="3" height="7" rx="0.5"/>
+              <!-- Chassis -->
+              <rect x="4" y="15.5" width="13" height="1.5"/>
+              <!-- Front wheel -->
+              <circle cx="5" cy="19" r="2"/>
+              <!-- Rear wheel -->
+              <circle cx="16" cy="19" r="2"/>
+            </svg>
+          } @else {
+            <i [class]="training.icon"></i>
+          }
+        </div>
+        <h3>{{ training.title }}</h3>
+        <p>{{ training.description }}</p>
+        <div class="requirements">
+          <h4>Basic Qualifications:</h4>
+          <ul>
+            <!-- Another *ngFor — nested loops work the same way -->
+            <li *ngFor="let req of training.requirements">{{ req }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Forklift Training Photo Gallery -->
+<section class="forklift-gallery">
+  <div class="container">
+    <h2>Ameren UE Electric Forklifts in Action</h2>
+    <p class="gallery-sub">
+      MTN, Inc. proudly trains participants on state-of-the-art electric forklifts
+      generously donated by <strong>Ameren UE</strong> — empowering our community
+      with real skills and real careers at our Charleston, MO facility.
+    </p>
+    <div class="gallery-grid">
+      <img src="assets/photos/prog.jpeg" alt="WSTEP program training in action">
+      <img src="assets/photos/prog2.jpeg" alt="WSTEP program training in action">
+      <img src="assets/photos/prog3.jpg" alt="WSTEP program training in action">
+      <img src="assets/photos/prog3.jpeg" alt="WSTEP program training in action">
+      <img src="assets/photos/prog4.jpg" alt="WSTEP program training in action">
+      <img src="assets/photos/prog5.jpg" alt="WSTEP program training in action">
+    </div>
+  </div>
+</section>
+
+<!-- Who We Serve -->
+<section class="who-we-serve">
+  <div class="container">
+    <h2>Who We Will Serve</h2>
+    <div class="serve-grid">
+      <div class="serve-item"><i class="fas fa-check-circle"></i> Missouri residents or individuals employed by a Missouri company</div>
+      <div class="serve-item"><i class="fas fa-check-circle"></i> Individuals living in Qualified Census Tracts</div>
+      <div class="serve-item"><i class="fas fa-check-circle"></i> Low and moderate-income households</div>
+      <div class="serve-item"><i class="fas fa-check-circle"></i> Individuals experiencing unemployment</div>
+      <div class="serve-item"><i class="fas fa-check-circle"></i> Individuals experiencing housing insecurity</div>
+      <div class="serve-item"><i class="fas fa-check-circle"></i> Incarcerated individuals scheduled for release</div>
+      <div class="serve-item"><i class="fas fa-check-circle"></i> Individuals who qualify for certain federal benefits</div>
+      <div class="serve-item"><i class="fas fa-check-circle"></i> Must be 18 years old or older</div>
+    </div>
+  </div>
+</section>
+
+<!-- Training Location & Contact -->
+<section class="training-info">
+  <div class="container info-grid">
+    <div class="info-box">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Training Location</h3>
+      <p>700 West Marshall St.<br>(The former Ameren Facility)<br>Charleston, MO</p>
+    </div>
+    <div class="info-box">
+      <i class="fas fa-users"></i>
+      <h3>Current Training Partners</h3>
+      <p>Fitzgerald Marine & Repair, Inc.<br>National Maintenance & Repair of KY, Inc.<br>Three Rivers College</p>
+    </div>
+    <div class="info-box">
+      <i class="fas fa-phone"></i>
+      <h3>Sign Up / More Info</h3>
+      <p>Contact <strong>Pam Jones</strong><br>📞 573-233-2980<br>✉️ meettheneed2&#64;gmail.com</p>
+      <p class="urgent">⚠️ SIGN UP TODAY: TRAINING IS ENDING SOON!</p>
+      <a [href]="registerUrl" target="_blank" class="btn-register-now">
+        <i class="fas fa-pencil-alt"></i> Register Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Food Insecurity Program -->
+<section class="food-program container">
+  <div class="food-text food-text-full">
+    <h2>Fighting Food Insecurity</h2>
+    <p>
+      MTN, Inc. is partnering with a local, minority-owned trucking company to provide food
+      and services to any and all people who face food insecurities within our community and
+      region. With this partnership, we have the opportunity to reach more clients in a broader
+      region across the state and beyond.
+    </p>
+    <a routerLink="/impact" class="btn-link">See Our Impact →</a>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+<!-- EVENTS PAGE — Upcoming events, registration links, and flyers -->
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Upcoming Events</h1>
+    <p>Register for Training & Stay Connected</p>
+  </div>
+</section>
+
+<!-- Upcoming Events List -->
+<section class="upcoming-section">
+  <div class="container">
+    <h2>What's Coming Up</h2>
+
+    <div class="event-list">
+      <div class="event-row" *ngFor="let event of upcomingEvents">
+        <div class="event-date-block">
+          <span class="event-month">{{ event.month }}</span>
+          <span class="event-day">{{ event.day }}</span>
+        </div>
+        <div class="event-details">
+          <h3>{{ event.title }}</h3>
+          <p class="event-meta">
+            <i class="fas fa-clock"></i> {{ event.time }} &nbsp;|&nbsp;
+            <i class="fas fa-map-marker-alt"></i> {{ event.location }}
+          </p>
+          <p class="event-desc">{{ event.description }}</p>
+        </div>
+        <div class="event-action">
+          <a *ngIf="event.registerLink" [href]="event.registerLink" class="btn-register">
+            Register
+          </a>
+        </div>
+      </div>
+
+      <!-- Empty state shown when no upcoming events are listed -->
+      <div class="no-events" *ngIf="upcomingEvents.length === 0">
+        <i class="fas fa-calendar-alt"></i>
+        <p>No upcoming events at this time. Check back soon!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Flyers Section -->
+<section class="flyers-section">
+  <div class="container">
+    <h2>Event Flyers</h2>
+
+    <div class="flyers-grid">
+      <div class="flyer-card" *ngFor="let flyer of flyers">
+        <div class="flyer-thumb">
+          <img *ngIf="flyer.thumb" [src]="flyer.thumb" [alt]="flyer.title + ' flyer'">
+          <div *ngIf="!flyer.thumb" class="flyer-placeholder">
+            <i class="fas fa-file-image"></i>
+          </div>
+        </div>
+        <div class="flyer-info">
+          <h3>{{ flyer.title }}</h3>
+          <p>{{ flyer.date }}</p>
+          <a [href]="flyer.file" download class="btn-download">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+
+      <!-- Empty state for flyers -->
+      <div class="no-flyers" *ngIf="flyers.length === 0">
+        <i class="fas fa-file-image"></i>
+        <p>Flyers will be posted here as events are announced.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Registration App CTA -->
+<section class="register-cta">
+  <div class="container">
+    <i class="fas fa-graduation-cap"></i>
+    <h2>Ready to Start Your Training?</h2>
+    <p>Apply now for our Forklift, CDL, or Shipyard Welding programs — all no cost to qualified participants.</p>
+    <a routerLink="/programs" class="btn-primary">View All Programs</a>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+<!-- STAFF PAGE — Matches Page 12 of your Canva design -->
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Meet the Staff</h1>
+    <p>The People Behind the Mission</p>
+  </div>
+</section>
+
+<section class="staff-section container">
+  <p class="staff-intro">
+    Our dedicated team works tirelessly every day to fight food insecurity,
+    deliver workforce training, and uplift our community.
+  </p>
+
+  <div class="staff-grid">
+    <div class="staff-card" *ngFor="let member of staffMembers">
+      <div class="staff-avatar">
+        <i [class]="member.icon"></i>
+      </div>
+      <div class="staff-info">
+        <h2>{{ member.name }}</h2>
+        <p class="staff-title">{{ member.title }}</p>
+        <p class="staff-bio">{{ member.bio }}</p>
+        <div class="staff-contact">
+          <i class="fas fa-phone"></i>
+          <a href="tel:{{ member.contact }}">{{ member.contact }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="join-section">
+  <div class="container">
+    <h2>Become an Instructor</h2>
+    <p>
+      Interested in sharing your expertise and helping change lives? MTN, Inc. is
+      looking for qualified instructors for our WSTEP training programs.
+    </p>
+    <p>Contact Pam Jones to learn more!</p>
+    <div class="join-contact">
+      <a href="tel:5732332980" class="btn-contact">📞 573-233-2980</a>
+      <a href="mailto:meettheneed2&#64;gmail.com" class="btn-contact">✉️ meettheneed2&#64;gmail.com</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+/* ============================================
+   styles.css — Global Styles for MTN, Inc.
+   These apply to EVERY page in the app.
+   ============================================ */
+
+/* CSS Reset — removes browser default spacing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root font & colors */
+:root {
+  --navy:  #1a2a4a;
+  --gold:  #c9a84c;
+  --light: #f5f7fa;
+  --text:  #333333;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Make all images responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Links */
+a {
+  color: var(--navy);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* Headings use Montserrat */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.3;
+}

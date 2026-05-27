@@ -1,0 +1,64 @@
+<!-- DONORS PAGE — Matches Pages 11 of your Canva design -->
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Our Donors</h1>
+    <p>Thanks to All Who Believe in Our Mission</p>
+  </div>
+</section>
+
+<section class="donors-section container">
+  <p class="donors-intro">
+    MTN, Inc. is grateful to every individual, business, and organization that has
+    supported our mission. Your generosity directly impacts the lives of families
+    across our 12-county region.
+  </p>
+
+  <div class="donors-grid">
+    <div class="donor-card" *ngFor="let donor of donors">
+      <i class="fas fa-star"></i>
+      <span>{{ donor }}</span>
+    </div>
+  </div>
+</section>
+
+<!-- ARPA Note -->
+<section class="arpa-note container">
+  <div class="arpa-box">
+    <i class="fas fa-info-circle"></i>
+    <div>
+      <h3>About the ARPA Grant</h3>
+      <p>
+        The ARPA Grant is <strong>Reimbursable</strong>. This means MTN, Inc. must pay for
+        allowable grant expenses first, then submit invoices for reimbursement.
+        Your donations are critical to keeping the program running!
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Donate CTA -->
+<section class="donate-cta">
+  <div class="container">
+    <h2>Please Donate Today!</h2>
+    <p>Donations are Needed and are Greatly Appreciated!</p>
+    <div class="donate-highlight">💰 Donations are Tax Deductible!</div>
+    <div class="donate-info">
+      <div class="donate-box">
+        <i class="fas fa-envelope"></i>
+        <h3>Mail a Check</h3>
+        <p>MTN, Inc.<br>PO Box 333<br>Charleston, MO 63834</p>
+      </div>
+      <div class="donate-box">
+        <i class="fas fa-phone"></i>
+        <h3>Call Us</h3>
+        <p><a href="tel:5732332980">573-233-2980</a></p>
+      </div>
+      <div class="donate-box">
+        <i class="fas fa-envelope-open-text"></i>
+        <h3>Email Us</h3>
+        <p><a href="mailto:meettheneed2&#64;gmail.com">meettheneed2&#64;gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>

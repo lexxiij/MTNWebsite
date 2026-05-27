@@ -1,0 +1,208 @@
+/* DONATE PAGE */
+
+.page-hero {
+  background: linear-gradient(135deg, #1a2a4a, #2c4a7c);
+  color: white; text-align: center; padding: 80px 20px;
+}
+.page-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 800; }
+.page-hero p  { color: #c9a84c; font-size: 1.1rem; margin-top: 10px; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* ── Layout ── */
+.donate-section { padding: 70px 20px; background: #f5f7fa; }
+
+.donate-layout {
+  display: flex;
+  justify-content: center;
+}
+
+/* ── Donation form card — centered ── */
+.donate-form-card {
+  width: 100%; max-width: 480px;
+  background: white; border-radius: 16px;
+  padding: 40px 36px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+}
+
+.donate-form-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem; color: #1a2a4a; margin-bottom: 24px;
+}
+
+/* Preset amount buttons */
+.preset-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;
+}
+
+.preset-btn {
+  padding: 14px 8px; border-radius: 10px;
+  border: 2px solid #d0dce8; background: white;
+  font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700;
+  color: #1a2a4a; cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.preset-btn:hover { border-color: #1a2a4a; }
+.preset-btn.selected {
+  background: #1a2a4a; color: #c9a84c; border-color: #1a2a4a;
+}
+
+/* Custom amount input */
+.custom-label {
+  display: flex; flex-direction: column;
+  font-size: 0.875rem; font-weight: 600;
+  color: #1a2a4a; gap: 8px; margin-bottom: 20px;
+}
+.custom-input-wrap {
+  display: flex; align-items: center; gap: 0;
+  border: 2px solid #d0dce8; border-radius: 10px; overflow: hidden;
+  transition: border-color 0.2s;
+}
+.custom-input-wrap:focus-within { border-color: #1a2a4a; }
+.dollar-sign {
+  background: #f5f7fa; padding: 12px 14px;
+  font-weight: 700; color: #1a2a4a; font-size: 1rem;
+  border-right: 2px solid #d0dce8;
+}
+.custom-input-wrap input {
+  border: none; outline: none; padding: 12px 14px;
+  font-size: 1rem; font-family: 'Open Sans', sans-serif;
+  color: #1a2a4a; width: 100%; background: white;
+}
+
+/* Amount preview */
+.amount-preview {
+  background: #f0f4ff; border-radius: 8px;
+  padding: 12px 16px; margin-bottom: 20px;
+  font-size: 0.9rem; color: #1a2a4a; text-align: center;
+}
+.amount-preview strong { font-size: 1.1rem; }
+
+/* Error */
+.error { color: #dc2626; font-size: 0.85rem; margin-bottom: 12px; }
+
+/* Donate button */
+.btn-donate {
+  width: 100%; padding: 14px;
+  background: #c9a84c; color: #1a2a4a;
+  border: none; border-radius: 10px;
+  font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 800;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+  margin-bottom: 16px;
+}
+.btn-donate:hover { background: #b8933f; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.4); }
+.btn-donate:active { transform: translateY(0); }
+.btn-donate:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.btn-donate i { font-size: 1rem; }
+
+.stripe-note {
+  text-align: center; font-size: 0.78rem; color: #888; line-height: 1.5;
+}
+.stripe-note i { color: #1a2a4a; margin-right: 4px; }
+
+/* ── Status Overlay (success / cancel) ── */
+.status-overlay {
+  min-height: 100vh; display: flex; align-items: center;
+  justify-content: center; padding: 40px 20px;
+  background: #f5f7fa;
+}
+
+.status-card {
+  background: white; border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  padding: 50px 44px; max-width: 500px; width: 100%;
+  text-align: center; display: flex; flex-direction: column;
+  align-items: center; gap: 16px;
+}
+
+.status-icon { font-size: 3.5rem; }
+
+.status-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem; color: #1a2a4a; margin: 0;
+}
+.status-card p { font-size: 0.95rem; color: #555; line-height: 1.7; margin: 0; }
+.tax-note { font-size: 0.82rem; color: #888; }
+
+.btn-primary {
+  display: inline-block; background: #1a2a4a; color: white;
+  padding: 12px 32px; border-radius: 30px;
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  text-decoration: none; border: none; cursor: pointer;
+  font-size: 0.95rem; margin-top: 8px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: #c9a84c; color: #1a2a4a; transform: translateY(-2px); }
+
+.btn-secondary {
+  display: inline-block; background: transparent; color: #1a2a4a;
+  padding: 10px 28px; border-radius: 30px; border: 2px solid #1a2a4a;
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  text-decoration: none; font-size: 0.95rem; margin-top: 4px;
+  transition: background 0.2s;
+}
+.btn-secondary:hover { background: #f0f4ff; }
+
+/* ── Our Donors ── */
+.donors-section { padding: 70px 20px; background: #f5f7fa; }
+.donors-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem; color: #1a2a4a;
+  text-align: center; margin-bottom: 16px;
+}
+.donors-intro {
+  text-align: center; color: #555; font-size: 1rem;
+  line-height: 1.8; max-width: 700px; margin: 0 auto 40px;
+}
+.donors-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.donor-card {
+  background: white; border: 2px solid #1a2a4a; border-radius: 10px;
+  padding: 14px 22px; display: flex; align-items: center; gap: 12px;
+  font-size: 0.9rem; color: #1a2a4a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.2s;
+}
+.donor-card:hover { background: #1a2a4a; color: white; transform: translateY(-2px); }
+.donor-card i { color: #c9a84c; font-size: 0.9rem; }
+
+/* ── ARPA Note ── */
+.arpa-note { padding: 0 20px 60px; background: #f5f7fa; }
+.arpa-box {
+  background: #fff8e7; border: 2px solid #c9a84c; border-radius: 10px;
+  padding: 25px 30px; display: flex; gap: 20px; align-items: flex-start;
+  max-width: 1100px; margin: 0 auto;
+}
+.arpa-box i { font-size: 1.8rem; color: #c9a84c; margin-top: 3px; flex-shrink: 0; }
+.arpa-box h3 { font-family: 'Montserrat', sans-serif; color: #1a2a4a; margin-bottom: 8px; }
+.arpa-box p { color: #555; line-height: 1.7; font-size: 0.92rem; }
+
+/* ── Other Ways to Give ── */
+.other-ways-cta {
+  background: #1a2a4a; padding: 70px 20px; text-align: center; color: white;
+}
+.other-ways-cta h2 {
+  font-family: 'Montserrat', sans-serif; font-size: 2rem; color: #c9a84c; margin-bottom: 10px;
+}
+.other-ways-cta > .container > p { color: #cdd9e8; margin-bottom: 20px; }
+.donate-highlight {
+  display: inline-block; background: #c9a84c; color: #1a2a4a;
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  padding: 10px 25px; border-radius: 30px; margin-bottom: 40px; font-size: 1rem;
+}
+.donate-info { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+.donate-box {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px; padding: 30px 25px;
+  min-width: 200px; flex: 1; max-width: 250px;
+}
+.donate-box i { font-size: 1.8rem; color: #c9a84c; display: block; margin-bottom: 12px; }
+.donate-box h3 { font-family: 'Montserrat', sans-serif; color: white; margin-bottom: 10px; font-size: 1rem; }
+.donate-box p { color: #cdd9e8; line-height: 1.7; font-size: 0.9rem; }
+.donate-box a { color: #c9a84c; text-decoration: none; }
+.donate-box a:hover { text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .donate-form-card { padding: 28px 20px; }
+  .preset-grid { grid-template-columns: repeat(3, 1fr); }
+}

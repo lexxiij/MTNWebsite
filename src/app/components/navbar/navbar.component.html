@@ -1,0 +1,54 @@
+<!-- navbar.component.html -->
+<!-- routerLink is Angular's version of href — it changes pages WITHOUT reloading -->
+<!-- routerLinkActive adds a CSS class when that route is active (current page) -->
+
+<nav class="navbar">
+  <div class="nav-brand">
+    <a routerLink="/" (click)="closeMenu()">
+      <!-- Logo image — file goes in src/assets/mtn-logo.png -->
+      <img src="assets/mtn-logo.png" alt="MTN, Inc. Logo" class="nav-logo">
+      <div class="brand-text">
+        <span class="brand-name">MTN, Inc.</span>
+        <span class="brand-tagline">Meeting The Need</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Hamburger button — only visible on mobile -->
+  <button class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
+    <i class="fas" [class.fa-bars]="!menuOpen" [class.fa-times]="menuOpen"></i>
+  </button>
+
+  <!-- Nav links — [class.open] adds the 'open' class when menuOpen is true -->
+  <ul class="nav-links" [class.open]="menuOpen">
+    <li>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+         (click)="closeMenu()">Home</a>
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+    </li>
+    <li>
+      <a routerLink="/programs" routerLinkActive="active" (click)="closeMenu()">Programs & Services</a>
+    </li>
+    <li>
+      <a routerLink="/events" routerLinkActive="active" (click)="closeMenu()">Events</a>
+    </li>
+    <li>
+      <a routerLink="/impact" routerLinkActive="active" (click)="closeMenu()">Our Impact</a>
+    </li>
+    <li>
+      <a routerLink="/staff" routerLinkActive="active" (click)="closeMenu()">Meet the Staff</a>
+    </li>
+    <li>
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">
+        Let's Connect
+      </a>
+    </li>
+    <li>
+      <a routerLink="/donate" routerLinkActive="active" (click)="closeMenu()" class="btn-donate">
+        <i class="fas fa-heart"></i> Donate
+      </a>
+    </li>
+  </ul>
+</nav>

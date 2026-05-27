@@ -1,0 +1,39 @@
+<!-- app.component.html — The shell of your entire website.
+     The navbar stays on every page. <router-outlet> is the
+     "window" where Angular swaps page content in and out. -->
+
+<app-navbar></app-navbar>
+
+<!-- router-outlet = the area that changes based on the URL -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>MTN, Inc.</h3>
+      <p>A 501(c)(3) Non-Profit Organization<br>
+         Fighting food insecurity and building brighter futures.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/programs">Programs & Services</a></li>
+        <li><a routerLink="/events">Events</a></li>
+        <li><a routerLink="/contact">Let's Connect</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p><i class="fas fa-phone"></i> 573-233-2980</p>
+      <p><i class="fas fa-envelope"></i> meettheneed2&#64;gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 700 W. Marshall St.<br>Charleston, MO 63834</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {{ currentYear }} MTN, Inc. All Rights Reserved. | Donations are Tax Deductible.</p>
+  </div>
+</footer>

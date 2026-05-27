@@ -1,0 +1,83 @@
+/* STAFF PAGE STYLES */
+
+.page-hero {
+  background: linear-gradient(135deg, #1a2a4a, #2c4a7c);
+  color: white; text-align: center; padding: 80px 20px;
+}
+.page-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 800; }
+.page-hero p { color: #c9a84c; font-size: 1.1rem; margin-top: 10px; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+.staff-section { padding: 70px 20px; }
+
+.staff-intro {
+  text-align: center; color: #555; font-size: 1rem;
+  line-height: 1.8; max-width: 650px; margin: 0 auto 50px;
+}
+
+.staff-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+
+.staff-card {
+  background: white; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  display: flex; flex-direction: column;
+  max-width: 500px; width: 100%;
+}
+
+.staff-avatar {
+  background: linear-gradient(135deg, #1a2a4a, #2c4a7c);
+  padding: 50px; text-align: center;
+}
+
+.staff-avatar i { font-size: 5rem; color: #c9a84c; }
+
+.staff-info { padding: 35px; }
+
+.staff-info h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem; color: #1a2a4a; margin-bottom: 5px;
+}
+
+.staff-title {
+  color: #c9a84c; font-weight: 700; font-size: 0.9rem;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
+}
+
+.staff-bio { color: #555; line-height: 1.8; font-size: 0.95rem; margin-bottom: 20px; }
+
+.staff-contact {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.9rem;
+}
+
+.staff-contact i { color: #1a2a4a; }
+.staff-contact a { color: #1a2a4a; text-decoration: none; font-weight: 600; }
+.staff-contact a:hover { color: #c9a84c; }
+
+/* Join Section */
+.join-section {
+  background: #f5f7fa; padding: 70px 20px; text-align: center;
+}
+
+.join-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem; color: #1a2a4a; margin-bottom: 15px;
+}
+
+.join-section p { color: #555; line-height: 1.8; margin-bottom: 8px; }
+
+.join-contact {
+  display: flex; flex-wrap: wrap; gap: 15px;
+  justify-content: center; margin-top: 25px;
+}
+
+.btn-contact {
+  display: inline-block;
+  background: #1a2a4a; color: white;
+  padding: 12px 25px; border-radius: 30px;
+  text-decoration: none; font-family: 'Montserrat', sans-serif;
+  font-weight: 700; font-size: 0.9rem; transition: background 0.2s;
+}
+
+.btn-contact:hover { background: #c9a84c; color: #1a2a4a; }

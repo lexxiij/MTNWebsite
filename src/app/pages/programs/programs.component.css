@@ -1,0 +1,388 @@
+/* PROGRAMS PAGE STYLES */
+
+.page-hero {
+  background: linear-gradient(135deg, #1a2a4a, #2c4a7c);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+.page-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+.page-hero p {
+  color: #c9a84c;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Program Intro */
+.program-intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 70px 20px;
+  align-items: flex-start;
+}
+
+.program-badge {
+  flex: 0 0 250px;
+  background: #1a2a4a;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.program-badge span {
+  background: #c9a84c;
+  color: #1a2a4a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.program-badge h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.badge-sub {
+  color: #c9a84c;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.program-desc { flex: 1; min-width: 280px; }
+.program-desc p {
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.grant-highlight {
+  background: #f0f4ff;
+  border-left: 4px solid #1a2a4a;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin: 15px 0;
+  color: #1a2a4a;
+  font-size: 0.95rem;
+}
+
+.grant-highlight i { margin-right: 8px; color: #c9a84c; }
+
+.free-banner {
+  background: #c9a84c;
+  color: #1a2a4a;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Trainings Grid */
+.trainings-section {
+  background: #f5f7fa;
+  padding: 70px 20px;
+}
+
+.trainings-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #1a2a4a;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.trainings-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.training-card {
+  background: white;
+  border-radius: 12px;
+  padding: 35px 25px;
+  width: 300px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-top: 5px solid #1a2a4a;
+  transition: transform 0.25s;
+}
+
+.training-card:hover {
+  transform: translateY(-5px);
+  border-top-color: #c9a84c;
+}
+
+.training-icon {
+  font-size: 2.5rem;
+  color: #1a2a4a;
+  margin-bottom: 15px;
+}
+
+/* Custom SVG icon inside training card — matches FA icon size/color */
+.training-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: currentColor;
+  display: block;
+}
+
+.training-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #1a2a4a;
+  margin-bottom: 12px;
+}
+
+.training-card > p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.requirements h4 {
+  font-size: 0.85rem;
+  color: #1a2a4a;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.requirements ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.requirements ul li {
+  font-size: 0.82rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Forklift Photo Gallery */
+.forklift-gallery {
+  padding: 70px 20px;
+  background: #1a2a4a;
+}
+
+.forklift-gallery h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #c9a84c;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.gallery-sub {
+  text-align: center;
+  color: #cdd9e8;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 35px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* First photo spans 2 columns, rest fill in */
+.gallery-grid img:first-child {
+  grid-column: span 2;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 280px;        /* uniform height for every photo */
+  object-fit: contain;  /* show full picture — no cropping */
+  background: #0d1b2e;  /* dark fill behind any letterbox gaps */
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Wide (first) photo gets a taller box to balance the layout */
+.gallery-grid img:first-child {
+  height: 360px;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 700px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gallery-grid img:first-child {
+    grid-column: span 2;
+  }
+}
+
+/* Who We Serve */
+.who-we-serve {
+  padding: 70px 20px;
+  background: white;
+}
+
+.who-we-serve h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #1a2a4a;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.serve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.serve-item {
+  background: #f5f7fa;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.serve-item i { color: #1a2a4a; font-size: 1rem; }
+
+/* Training Info */
+.training-info {
+  background: #1a2a4a;
+  padding: 70px 20px;
+  color: white;
+}
+
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.info-box {
+  text-align: center;
+  max-width: 280px;
+}
+
+.info-box i {
+  font-size: 2rem;
+  color: #c9a84c;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.info-box h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #c9a84c;
+  margin-bottom: 12px;
+}
+
+.info-box p {
+  color: #cdd9e8;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.urgent {
+  color: #ffcc55 !important;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+.btn-register-now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  background: #c9a84c;
+  color: #1a2a4a;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-register-now:hover {
+  background: #e8c060;
+  transform: translateY(-2px);
+}
+
+/* Food Program */
+.food-program {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  padding: 70px 20px;
+  align-items: center;
+}
+
+.food-photo {
+  flex: 0 0 380px;
+  min-width: 260px;
+}
+
+.food-photo img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  object-fit: contain;
+  height: auto;
+  background: #0d1b2e;
+}
+
+.food-text { flex: 1; min-width: 250px; }
+.food-text-full { flex: 1 1 100%; max-width: 700px; margin: 0 auto; text-align: center; }
+
+.food-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: #1a2a4a;
+  margin-bottom: 15px;
+}
+
+.food-text p {
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.btn-link {
+  color: #1a2a4a;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-bottom: 2px solid #c9a84c;
+  padding-bottom: 2px;
+}

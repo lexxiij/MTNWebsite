@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build -- --configuration production"
+  publish = "dist/mtn-website/browser"
+
+# Tells Netlify to serve index.html for any route so Angular's router works.
+# Without this, refreshing the page on any route (e.g. /donate) returns a 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

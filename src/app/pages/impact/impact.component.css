@@ -1,0 +1,270 @@
+/* IMPACT PAGE STYLES */
+
+.page-hero {
+  background: linear-gradient(135deg, #1a2a4a, #2c4a7c);
+  color: white; text-align: center; padding: 80px 20px;
+}
+.page-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 800; }
+.page-hero p { color: #c9a84c; font-size: 1.1rem; margin-top: 10px; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.stats-section { background: #c9a84c; padding: 50px 20px; }
+
+.stats-grid {
+  display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
+}
+
+.stat-card {
+  text-align: center; min-width: 180px; flex: 1;
+}
+
+.stat-card i { font-size: 1.8rem; color: #1a2a4a; display: block; margin-bottom: 10px; }
+
+.stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem; font-weight: 800; color: #1a2a4a;
+}
+
+.stat-label { font-size: 0.9rem; color: #1a2a4a; font-weight: 600; }
+
+.impact-story {
+  padding: 70px 20px;
+}
+
+.impact-story h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem; color: #1a2a4a; text-align: center; margin-bottom: 50px;
+}
+
+.impact-item {
+  display: flex; gap: 30px; margin-bottom: 45px;
+  align-items: flex-start; flex-wrap: wrap;
+}
+
+.impact-icon {
+  flex: 0 0 70px; height: 70px;
+  background: #1a2a4a; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; color: #c9a84c;
+}
+
+.impact-text h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #1a2a4a; font-size: 1.2rem; margin-bottom: 10px;
+}
+
+.impact-text p { color: #444; line-height: 1.8; font-size: 0.95rem; }
+
+.counties-section {
+  background: #f5f7fa; padding: 70px 20px; text-align: center;
+}
+
+.counties-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem; color: #1a2a4a; margin-bottom: 35px;
+}
+
+.counties-grid {
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+  max-width: 800px; margin: 0 auto;
+}
+
+.county-badge {
+  background: #1a2a4a; color: white;
+  padding: 10px 20px; border-radius: 30px;
+  font-size: 0.88rem; font-family: 'Montserrat', sans-serif; font-weight: 600;
+}
+
+/* ── Community Highlights ── */
+.highlights-section {
+  padding: 70px 20px;
+  background: #f5f7fa;
+}
+.highlights-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem; color: #1a2a4a;
+  text-align: center; margin-bottom: 40px;
+}
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.highlight-card {
+  background: white; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  display: flex; flex-direction: column;
+  border-left: 5px solid #1a2a4a;
+  transition: transform 0.25s;
+}
+.highlight-card:hover {
+  transform: translateY(-4px);
+  border-left-color: #c9a84c;
+}
+.highlight-icon {
+  background: #1a2a4a; color: #c9a84c;
+  font-size: 2rem; padding: 25px; text-align: center;
+}
+.highlight-body { padding: 20px 22px; }
+.highlight-body h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem; color: #1a2a4a; margin-bottom: 10px;
+}
+.highlight-body p { font-size: 0.88rem; color: #555; line-height: 1.7; }
+
+/* ── Community Photo Slideshow ── */
+.photo-gallery-section { padding: 70px 20px; background: #ffffff; }
+.photo-gallery-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem; color: #1a2a4a;
+  text-align: center; margin-bottom: 8px;
+}
+.gallery-intro {
+  text-align: center; color: #666;
+  font-family: 'Open Sans', sans-serif; margin-bottom: 35px;
+}
+
+/* Outer wrapper — pause on hover is handled in the template */
+.slideshow-wrap {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0d1b2e;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  user-select: none;
+}
+
+/* Fixed-height container — all slides stack here */
+.slideshow-track {
+  position: relative;
+  width: 100%;
+  height: 520px;
+}
+
+/* Every slide is absolute and invisible by default */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.75s ease;
+  pointer-events: none;
+}
+
+/* Only the active slide is shown */
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Caption fades in at the bottom of each slide */
+.slide-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(10,25,55,0.82));
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  padding: 36px 20px 14px;
+  text-align: center;
+}
+
+/* Prev / Next arrow buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  border: none; color: white;
+  font-size: 1.2rem;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.slide-btn:hover { background: rgba(201,168,76,0.75); }
+.slide-prev { left: 14px; }
+.slide-next { right: 14px; }
+
+/* Dot row */
+.slide-dots {
+  position: absolute;
+  bottom: 14px; left: 0; right: 0;
+  display: flex; justify-content: center;
+  gap: 8px; z-index: 10;
+}
+
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none; cursor: pointer; padding: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+.dot.active {
+  background: #c9a84c;
+  transform: scale(1.35);
+}
+
+/* Slide counter below the slideshow */
+.slide-counter {
+  text-align: center;
+  color: #888;
+  font-size: 0.82rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+  .slideshow-track { height: 300px; }
+}
+
+/* ── Ameren Section ── */
+.ameren-section { background: #1a2a4a; padding: 70px 20px; color: white; }
+.ameren-content { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+.ameren-text { flex: 1; min-width: 280px; }
+.ameren-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem; color: #c9a84c; margin-bottom: 20px;
+}
+.ameren-text p { color: #cdd9e8; line-height: 1.8; font-size: 0.92rem; margin-bottom: 15px; }
+.ameren-forklift-photo { flex: 0 0 360px; min-width: 260px; }
+.ameren-forklift-photo img {
+  width: 100%; border-radius: 12px; object-fit: contain;
+  height: auto; background: #0d1b2e; box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+}
+.ameren-photo-label {
+  color: #c9a84c; font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem; font-weight: 700;
+  text-align: center; margin-top: 12px;
+}
+.ameren-photo-label i { margin-right: 6px; }
+
+/* ── Thank You / Supporters ── */
+.thankyou-section { padding: 70px 20px; background: white; text-align: center; }
+.thankyou-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem; color: #1a2a4a; margin-bottom: 35px;
+}
+.supporters-grid {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  justify-content: center; max-width: 900px; margin: 0 auto;
+}
+.supporter-chip {
+  background: #f0f4ff; border: 1px solid #d0dce8;
+  border-radius: 30px; padding: 10px 20px;
+  font-size: 0.88rem; color: #1a2a4a;
+  display: flex; align-items: center; gap: 8px;
+}
+.supporter-chip i { color: #c9a84c; }

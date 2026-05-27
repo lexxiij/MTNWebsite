@@ -1,0 +1,152 @@
+<!-- DONATE PAGE -->
+
+<!-- ── Success State (Stripe redirected back after payment) ── -->
+<div class="status-overlay" *ngIf="status === 'success'">
+  <div class="status-card success">
+    <div class="status-icon">🙏</div>
+    <h2>Thank You for Your Generosity!</h2>
+    <p>
+      Your donation to MTN, Inc. has been received. Every gift helps us fight food insecurity,
+      fund workforce training, and strengthen our community in Missouri.
+    </p>
+    <p class="tax-note">MTN, Inc. is a 501(c)(3) non-profit organization. Your donation may be tax-deductible.</p>
+    <a routerLink="/" class="btn-primary">Return to Home</a>
+  </div>
+</div>
+
+<!-- ── Cancelled State ── -->
+<div class="status-overlay" *ngIf="status === 'cancel'">
+  <div class="status-card cancel">
+    <div class="status-icon">💛</div>
+    <h2>No Problem!</h2>
+    <p>Your donation was not completed. If you'd like to try again, we'd be grateful for your support.</p>
+    <button class="btn-primary" (click)="resetStatus()">Try Again</button>
+    <a routerLink="/" class="btn-secondary">Go Home</a>
+  </div>
+</div>
+
+<!-- ── Main Donate Page ── -->
+<ng-container *ngIf="status !== 'success'">
+
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <h1>Make a Donation</h1>
+      <p>Your gift changes lives in the Missouri Bootheel</p>
+    </div>
+  </section>
+
+  <!-- Our Donors -->
+  <section class="donors-section container">
+    <h2>Our Donors</h2>
+    <p class="donors-intro">
+      MTN, Inc. is grateful to every individual, business, and organization that has
+      supported our mission. Your generosity directly impacts the lives of families
+      across our 12-county region.
+    </p>
+    <div class="donors-grid">
+      <div class="donor-card" *ngFor="let donor of donors">
+        <i class="fas fa-star"></i>
+        <span>{{ donor }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARPA Note -->
+  <section class="arpa-note container">
+    <div class="arpa-box">
+      <i class="fas fa-info-circle"></i>
+      <div>
+        <h3>About the ARPA Grant</h3>
+        <p>
+          The ARPA Grant is <strong>Reimbursable</strong>. This means MTN, Inc. must pay for
+          allowable grant expenses first, then submit invoices for reimbursement.
+          Your donations are critical to keeping the program running!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stripe Donation Form -->
+  <section class="donate-section">
+    <div class="container donate-layout">
+
+      <!-- Donation form -->
+      <div class="donate-form-card">
+        <h2>Choose an Amount</h2>
+
+        <!-- Preset amount buttons -->
+        <div class="preset-grid">
+          <button
+            *ngFor="let amt of presetAmounts"
+            class="preset-btn"
+            [class.selected]="selectedAmount === amt && !customAmount"
+            (click)="selectPreset(amt)"
+          >
+            ${{ amt }}
+          </button>
+        </div>
+
+        <!-- Custom amount -->
+        <label class="custom-label">
+          Or enter a custom amount
+          <div class="custom-input-wrap">
+            <span class="dollar-sign">$</span>
+            <input
+              type="number"
+              min="1"
+              step="1"
+              placeholder="0.00"
+              [(ngModel)]="customAmount"
+              (input)="selectedAmount = null"
+            />
+          </div>
+        </label>
+
+        <!-- Live amount preview -->
+        <div class="amount-preview" *ngIf="finalAmount > 0">
+          Donating <strong>${{ finalAmount | number:'1.2-2' }}</strong> to MTN, Inc.
+        </div>
+
+        <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+
+        <button class="btn-donate" (click)="donate()" [disabled]="loading">
+          <i class="fas fa-heart"></i>
+          {{ loading ? 'Redirecting to Stripe...' : 'Donate Securely' }}
+        </button>
+
+        <p class="stripe-note">
+          <i class="fas fa-lock"></i>
+          Payments are processed securely by Stripe. MTN, Inc. never stores your card details.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Other Ways to Give -->
+  <section class="other-ways-cta">
+    <div class="container">
+      <h2>Other Ways to Give</h2>
+      <p>Donations are Needed and are Greatly Appreciated!</p>
+      <div class="donate-highlight">💰 Donations are Tax Deductible!</div>
+      <div class="donate-info">
+        <div class="donate-box">
+          <i class="fas fa-envelope"></i>
+          <h3>Mail a Check</h3>
+          <p>MTN, Inc.<br>PO Box 333<br>Charleston, MO 63834</p>
+        </div>
+        <div class="donate-box">
+          <i class="fas fa-phone"></i>
+          <h3>Call Us</h3>
+          <p><a href="tel:5732332980">573-233-2980</a></p>
+        </div>
+        <div class="donate-box">
+          <i class="fas fa-envelope-open-text"></i>
+          <h3>Email Us</h3>
+          <p><a href="mailto:meettheneed2&#64;gmail.com">meettheneed2&#64;gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</ng-container>

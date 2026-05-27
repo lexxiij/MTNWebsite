@@ -1,0 +1,153 @@
+<!-- IMPACT PAGE — Matches Page 9 of your Canva design -->
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Our Impact</h1>
+    <p>Making a Real Difference in Missouri Communities</p>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container stats-grid">
+    <div class="stat-card" *ngFor="let stat of stats">
+      <i [class]="stat.icon"></i>
+      <div class="stat-number">{{ stat.number }}</div>
+      <div class="stat-label">{{ stat.label }}</div>
+    </div>
+  </div>
+</section>
+
+<section class="impact-story container">
+  <h2>How We're Making a Difference</h2>
+
+  <div class="impact-item">
+    <div class="impact-icon"><i class="fas fa-utensils"></i></div>
+    <div class="impact-text">
+      <h3>Food Assistance Across the Region</h3>
+      <p>
+        Through our partnership with a local, minority-owned trucking company, MTN, Inc.
+        is able to reach food-insecure families across a broad region of Missouri and beyond.
+        No family should go hungry, and with the help of our partners and donors,
+        we're making that a reality.
+      </p>
+    </div>
+  </div>
+
+  <div class="impact-item">
+    <div class="impact-icon"><i class="fas fa-hard-hat"></i></div>
+    <div class="impact-text">
+      <h3>Workforce Development</h3>
+      <p>
+        The WSTEP program is training unemployed and underemployed adults in our 12-county
+        region with job-ready skills in forklift operation, CDL driving, and shipyard welding.
+        Every certificate earned is a life changed.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="counties-section">
+  <div class="container">
+    <h2>Counties We Serve</h2>
+    <div class="counties-grid">
+      <span *ngFor="let county of ['Mississippi', 'Scott', 'New Madrid', 'Pemiscot', 'Butler', 'Bollinger', 'Dunklin', 'Cape Girardeau', 'Perry', 'Saint Francois', 'Stoddard', 'Saint Genevieve']"
+            class="county-badge">
+        {{ county }} County
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Community Highlights -->
+<section class="highlights-section">
+  <div class="container">
+    <h2>Community Highlights</h2>
+    <div class="highlights-grid">
+      <div class="highlight-card" *ngFor="let item of communityHighlights">
+        <div class="highlight-icon">
+          <i [class]="item.icon"></i>
+        </div>
+        <div class="highlight-body">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Community Photo Slideshow -->
+<section class="photo-gallery-section">
+  <div class="container">
+    <h2>Community in Action</h2>
+    <p class="gallery-intro">A look at MTN, Inc. out in the community — from school visits to seasonal giveaways.</p>
+
+    <div class="slideshow-wrap"
+         (mouseenter)="stopAutoPlay()"
+         (mouseleave)="startAutoPlay()">
+
+      <!-- Slides -->
+      <div class="slideshow-track">
+        <div class="slide"
+             *ngFor="let photo of galleryPhotos; let i = index"
+             [class.active]="i === currentSlide">
+          <img [src]="photo.src" [alt]="photo.caption">
+          <div class="slide-caption">{{ photo.caption }}</div>
+        </div>
+      </div>
+
+      <!-- Prev / Next arrows -->
+      <button class="slide-btn slide-prev" (click)="prevSlide()" aria-label="Previous photo">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slide-btn slide-next" (click)="nextSlide()" aria-label="Next photo">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <!-- Dot indicators -->
+      <div class="slide-dots">
+        <button class="dot"
+                *ngFor="let photo of galleryPhotos; let i = index"
+                [class.active]="i === currentSlide"
+                (click)="goToSlide(i)"
+                [attr.aria-label]="'Go to slide ' + (i + 1)">
+        </button>
+      </div>
+
+    </div>
+
+    <p class="slide-counter">{{ currentSlide + 1 }} / {{ galleryPhotos.length }}</p>
+  </div>
+</section>
+
+<!-- Ameren Partnership -->
+<section class="ameren-section">
+  <div class="container ameren-content">
+    <div class="ameren-text">
+      <h2>Ameren Missouri Awards MTN, Inc. Two Electric Forklifts!</h2>
+      <p>
+        The partnership between MTN, Inc. and Ameren Missouri allows participants to be
+        trained to operate state-of-the-art electric forklifts and to obtain and retain
+        gainful employment!
+      </p>
+    </div>
+    <div class="ameren-forklift-photo">
+      <img src="assets/photos/prog6.jpg" alt="WSTEP participant operating an Ameren-donated electric forklift">
+      <div class="ameren-photo-label">
+        <i class="fas fa-bolt"></i> Electric Forklift Training, Ameren Missouri and MTN, Inc.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Thank You Section -->
+<section class="thankyou-section">
+  <div class="container">
+    <h2>🙏 Thanks to All Who Supported These Events!</h2>
+    <div class="supporters-grid">
+      <div class="supporter-chip" *ngFor="let supporter of supporters">
+        <i class="fas fa-heart"></i> {{ supporter }}
+      </div>
+    </div>
+  </div>
+</section>

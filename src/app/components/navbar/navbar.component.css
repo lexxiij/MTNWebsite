@@ -1,0 +1,141 @@
+/* navbar.component.css */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a2a4a;
+  padding: 0 30px;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Brand / Logo */
+.nav-brand a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;   /* Logo image + text side by side */
+  align-items: center;
+  gap: 12px;
+  line-height: 1.1;
+}
+
+/* The actual logo image */
+.nav-logo {
+  height: 52px;          /* Fits nicely inside the 70px navbar */
+  width: auto;           /* Keeps the original proportions */
+  object-fit: contain;
+}
+
+/* Text sits to the right of the logo */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.brand-tagline {
+  color: #c9a84c;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 5px;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: #cdd9e8;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+  background-color: rgba(201, 168, 76, 0.15);
+}
+
+/* Active link — the current page */
+.nav-links li a.active {
+  color: #c9a84c;
+}
+
+/* "Let's Connect" button style */
+.btn-donate {
+  background-color: #c9a84c !important;
+  color: #1a2a4a !important;
+  font-weight: 700 !important;
+  border-radius: 20px !important;
+  padding: 8px 18px !important;
+}
+
+.btn-donate:hover {
+  background-color: #e0c06a !important;
+}
+
+/* Hamburger — hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ── Mobile styles ── */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #1a2a4a;
+    padding: 15px 0;
+    gap: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 14px 20px;
+    border-radius: 0;
+  }
+}

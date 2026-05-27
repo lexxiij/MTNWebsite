@@ -1,0 +1,72 @@
+/* app.component.css — Styles for the shell (footer) */
+
+main {
+  min-height: 80vh;
+}
+
+/* ── Footer ── */
+.site-footer {
+  background-color: #1a2a4a;
+  color: #cdd9e8;
+  padding: 50px 0 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  gap: 30px;
+}
+
+.footer-section h3 {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #c9a84c;
+  padding-bottom: 8px;
+}
+
+.footer-section p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin: 5px 0;
+}
+
+.footer-section p i {
+  margin-right: 8px;
+  color: #c9a84c;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #cdd9e8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-section ul li a:hover {
+  color: #c9a84c;
+}
+
+.footer-bottom {
+  background-color: #111e35;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 0.8rem;
+  color: #8a9bb5;
+}
