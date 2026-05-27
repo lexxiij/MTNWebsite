@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ProgramsComponent {
   // Update this URL once mtnConnect is deployed
-  registerUrl = 'https://connect.meettheneedinc.org/shipyard-welding';
+  registerUrl = 'https://connect.meettheneedinc.org';
 
   // This array powers the WSTEP training cards — a great example
   // of how Angular lets you store data in TypeScript and loop over
