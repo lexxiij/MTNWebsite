@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ProgramsComponent {
   // Update this URL once mtnConnect is deployed
-  registerUrl = 'https://mtnconnect.netlify.app/shipyard-welding';
+  registerUrl = 'https://connect.meettheneedinc.org/shipyard-welding';
 
   // This array powers the WSTEP training cards — a great example
   // of how Angular lets you store data in TypeScript and loop over
