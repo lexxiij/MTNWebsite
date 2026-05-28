@@ -15,7 +15,10 @@
 
   <div class="staff-grid">
     <div class="staff-card" *ngFor="let member of staffMembers">
-      <div class="staff-avatar">
+      <div class="staff-photo-wrap" *ngIf="member.photo">
+        <img [src]="member.photo" [alt]="member.name" class="staff-photo">
+      </div>
+      <div class="staff-avatar" *ngIf="!member.photo">
         <i [class]="member.icon"></i>
       </div>
       <div class="staff-info">
