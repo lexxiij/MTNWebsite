@@ -12,11 +12,11 @@ export class EventsComponent {
   upcomingEvents = [
     {
       month: 'JUN',
-      day: '8',
+      day: '9',
       title: 'Shipyard Welding Orientation',
-      time: '1:00 PM – 3:00 PM',
+      time: '3:00 PM – 5:00 PM',
       location: '700 W. Marshall St., Charleston, MO',
-      description: 'Orientation for the upcoming Shipyard Welding cohort. Please bring a Photo ID, Social Security Card, and Birth Certificate.',
+      description: 'Orientation for the upcoming Shipyard Welding cohort. Please bring a Missouri Driver\'s License or Missouri Photo ID, Social Security Card, and Birth Certificate.',
       registerLink: 'https://connect.meettheneedinc.org/shipyard-welding'
     }
   ];

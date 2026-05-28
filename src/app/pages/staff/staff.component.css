@@ -27,12 +27,17 @@
 
 .staff-photo-wrap {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 24px 0;
 }
 
 .staff-photo {
-  width: 100%;
+  width: 60%;
+  max-width: 220px;
   height: auto;
   display: block;
+  border-radius: 8px;
 }
 
 .staff-avatar {
