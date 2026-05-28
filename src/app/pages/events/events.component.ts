@@ -24,5 +24,18 @@ export class EventsComponent {
   // Add flyers here as they become available.
   // thumb: path to a preview image (optional)
   // file:  path to the downloadable PDF or image
-  flyers: { title: string; date: string; thumb: string; file: string }[] = [];
+  flyers: { title: string; date: string; thumb: string; file: string }[] = [
+    {
+      title: 'CDL & Forklift Training',
+      date: 'Orientation: May 29, 2026',
+      thumb: 'assets/WSTEPFLYER.png',
+      file: 'assets/WSTEPFLYER.pdf',
+    },
+    {
+      title: 'Shipyard Welding Training',
+      date: 'Orientation: June 9, 2026',
+      thumb: 'assets/WSTEPWELDING.png',
+      file: 'assets/WSTEPWELDING.pdf',
+    },
+  ];
 }
