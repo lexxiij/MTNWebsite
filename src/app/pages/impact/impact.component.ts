@@ -36,13 +36,23 @@ export class ImpactComponent implements OnInit, OnDestroy {
   // To add a new photo: drop the file in src/assets/photos/ and add a new
   // { src: 'assets/photos/yourfile.jpg', caption: 'Your caption' } entry below.
   galleryPhotos = [
-    { src: 'assets/photos/comimpact.jpeg',  caption: 'MTN, Inc. in the Community' },
-    { src: 'assets/photos/comimpact1.JPG',  caption: 'Community in Action' },
-    { src: 'assets/photos/comimpact2.JPG',  caption: 'Community in Action' },
-    { src: 'assets/photos/comimpact3.jpeg', caption: 'Community in Action' },
-    { src: 'assets/photos/comimpact5.jpg',  caption: 'Community in Action' },
-    { src: 'assets/photos/comimpact6.jpg',  caption: 'Community in Action' },
-    { src: 'assets/photos/comimpact8.jpeg', caption: 'Community in Action' },
+    { src: 'assets/photos/comimpact.jpeg',       caption: 'MTN, Inc. in the Community' },
+    { src: 'assets/photos/comimpact1.JPG',        caption: 'Community in Action' },
+    { src: 'assets/photos/comimpact2.JPG',        caption: 'Community in Action' },
+    { src: 'assets/photos/comimpact3.jpeg',       caption: 'Community in Action' },
+    { src: 'assets/photos/comimpact5.jpg',        caption: 'Community in Action' },
+    { src: 'assets/photos/comimpact6.jpg',        caption: 'Community in Action' },
+    { src: 'assets/photos/comimpact8.jpeg',       caption: 'Community in Action' },
+    { src: 'assets/photos/commimpact.JPG',        caption: 'Community in Action' },
+    { src: 'assets/photos/comaction.jpg',         caption: 'MTN, Inc. in Action' },
+    { src: 'assets/photos/impact9.jpg',           caption: 'Making an Impact' },
+    { src: 'assets/photos/backpack-giveaway.jpg', caption: 'Backpack Giveaway' },
+    { src: 'assets/photos/food-distribution.jpg', caption: 'Food Distribution' },
+    { src: 'assets/photos/community-meeting.jpg', caption: 'Community Meeting' },
+    { src: 'assets/photos/school-visit.jpg',      caption: 'School Visit' },
+    { src: 'assets/photos/toy-giveaway-kids.jpg', caption: 'County-Wide Toy Giveaway' },
+    { src: 'assets/photos/pumpkin-sale.jpg',      caption: 'Community Pumpkin Sale' },
+    { src: 'assets/photos/law-enforcement.jpg',   caption: 'Community & Law Enforcement Partnership' },
   ];
 
   currentSlide = 0;
