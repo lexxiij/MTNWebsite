@@ -1,21 +1,22 @@
 import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-staff',
-  templateUrl: './staff.component.html',
-  styleUrls: ['./staff.component.css']
-})
-// Defining the type here lets Angular's compiler know photo is optional (?)
-// without it you get a build error when the template references member.photo
+// Interface must come BEFORE the @Component decorator —
+// placing it after causes Angular to attach the decorator to the interface
+// instead of the class, which breaks the build.
 interface StaffMember {
   name: string;
   title: string;
   bio: string;
   icon: string;
   contact: string;
-  photo?: string; // optional — if set, shows the photo instead of the icon
+  photo?: string; // optional — shows photo instead of icon when set
 }
 
+@Component({
+  selector: 'app-staff',
+  templateUrl: './staff.component.html',
+  styleUrls: ['./staff.component.css']
+})
 export class StaffComponent {
   staffMembers: StaffMember[] = [
     {
