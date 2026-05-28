@@ -27,15 +27,11 @@
 
 .staff-photo-wrap {
   width: 100%;
-  max-height: 320px;
-  overflow: hidden;
 }
 
 .staff-photo {
   width: 100%;
-  height: 320px;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
   display: block;
 }
 
