@@ -16,7 +16,7 @@ export class ProgramsComponent {
     {
       icon: 'fas fa-forklift',
       title: 'Forklift Training',
-      description: 'Hands-on forklift operation training using state-of-the-art electric forklifts donated by Ameren Missouri.',
+      description: 'Hands-on forklift operation training using propane forklifts and state-of-the-art electric forklifts donated by Ameren Missouri.',
       requirements: ['18 years or older', 'Missouri resident (12-county region)', 'Meet WSTEP eligibility criteria']
     },
     {

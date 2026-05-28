@@ -48,7 +48,6 @@ export class ImpactComponent implements OnInit, OnDestroy {
     { src: 'assets/photos/impact9.jpg',           caption: 'Making an Impact' },
     { src: 'assets/photos/backpack-giveaway.jpg', caption: 'Backpack Giveaway' },
     { src: 'assets/photos/food-distribution.jpg', caption: 'Food Distribution' },
-    { src: 'assets/photos/community-meeting.jpg', caption: 'Community Meeting' },
     { src: 'assets/photos/school-visit.jpg',      caption: 'School Visit' },
     { src: 'assets/photos/toy-giveaway-kids.jpg', caption: 'County-Wide Toy Giveaway' },
     { src: 'assets/photos/pumpkin-sale.jpg',      caption: 'Community Pumpkin Sale' },
