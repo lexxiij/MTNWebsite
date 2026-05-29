@@ -74,7 +74,7 @@ export class EventsComponent implements OnInit {
       time,
       location:     e.location,
       description:  e.description,
-      registerLink: 'https://connect.meettheneedinc.org'  // links to mtnConnect app
+      registerLink: 'https://connect.meettheneedinc.org/events'  // links to mtnConnect events page
     };
   }
 
