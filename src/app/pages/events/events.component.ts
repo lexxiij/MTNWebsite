@@ -22,6 +22,7 @@ export class EventsComponent implements OnInit {
   upcomingEvents: DisplayEvent[] = [];
   loading = true;
   error = false;
+  errorMessage = '';
 
   // Flyers are still managed manually here (they're PDF assets, not from the DB)
   flyers: { title: string; date: string; thumb: string; file: string }[] = [
@@ -48,9 +49,10 @@ export class EventsComponent implements OnInit {
         this.upcomingEvents = events.map(e => this.toDisplayEvent(e));
         this.loading = false;
       },
-      error: () => {
+      error: (err) => {
         this.error = true;
         this.loading = false;
+        this.errorMessage = `Status: ${err.status} — ${err.message}`;
       }
     });
   }

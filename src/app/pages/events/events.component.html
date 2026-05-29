@@ -23,6 +23,7 @@
       <div class="no-events" *ngIf="error">
         <i class="fas fa-exclamation-circle"></i>
         <p>Could not load events. Please check back soon.</p>
+        <p><small>{{ errorMessage }}</small></p>
       </div>
 
       <div class="event-row" *ngFor="let event of upcomingEvents">
