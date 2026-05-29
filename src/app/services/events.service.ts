@@ -5,6 +5,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { retry, delay } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
 export interface ApiEvent {
@@ -25,7 +26,10 @@ export class EventsService {
   constructor(private http: HttpClient) {}
 
   getEvents(): Observable<ApiEvent[]> {
-    // This hits the public GET /api/events route — no login needed
-    return this.http.get<ApiEvent[]>(`${environment.apiUrl}/api/events`);
+    // retry(2) means: if the request fails, wait and try up to 2 more times.
+    // This handles Render's free-tier cold start (server asleep, wakes in ~30s).
+    return this.http.get<ApiEvent[]>(`${environment.apiUrl}/api/events`).pipe(
+      retry({ count: 2, delay: 5000 })  // retry twice, 5 seconds apart
+    );
   }
 }
