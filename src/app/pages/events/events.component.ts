@@ -1,29 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EventsService, ApiEvent } from '../../services/events.service';
+
+// This is the shape the HTML template expects for each event row
+interface DisplayEvent {
+  month: string;
+  day: string;
+  title: string;
+  time: string;
+  location: string;
+  description: string;
+  registerLink: string;
+}
 
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css']
 })
-export class EventsComponent {
+export class EventsComponent implements OnInit {
 
-  // Add upcoming events here. Set registerLink to a URL or leave as ''
-  // if there's no registration link yet.
-  upcomingEvents = [
-    {
-      month: 'JUN',
-      day: '9',
-      title: 'Shipyard Welding Orientation',
-      time: '3:00 PM – 5:00 PM',
-      location: '700 W. Marshall St., Charleston, MO',
-      description: 'Orientation for the upcoming Shipyard Welding cohort. Please bring a Missouri Driver\'s License or Missouri Photo ID, Social Security Card, and Birth Certificate.',
-      registerLink: 'https://connect.meettheneedinc.org/shipyard-welding'
-    }
-  ];
+  upcomingEvents: DisplayEvent[] = [];
+  loading = true;
+  error = false;
 
-  // Add flyers here as they become available.
-  // thumb: path to a preview image (optional)
-  // file:  path to the downloadable PDF or image
+  // Flyers are still managed manually here (they're PDF assets, not from the DB)
   flyers: { title: string; date: string; thumb: string; file: string }[] = [
     {
       title: 'CDL & Forklift Training',
@@ -38,4 +38,51 @@ export class EventsComponent {
       file: 'assets/WSTEPWELDING.pdf',
     },
   ];
+
+  constructor(private eventsService: EventsService) {}
+
+  ngOnInit(): void {
+    this.eventsService.getEvents().subscribe({
+      next: (events: ApiEvent[]) => {
+        // Transform API data into what the template needs
+        this.upcomingEvents = events.map(e => this.toDisplayEvent(e));
+        this.loading = false;
+      },
+      error: () => {
+        this.error = true;
+        this.loading = false;
+      }
+    });
+  }
+
+  private toDisplayEvent(e: ApiEvent): DisplayEvent {
+    // Parse "YYYY-MM-DD" into a Date so we can extract month + day
+    // Adding T00:00:00 prevents timezone shifting the date by a day
+    const d = new Date(e.date + 'T00:00:00');
+    const month = d.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+    const day   = String(d.getDate());
+
+    // Convert "HH:MM" (24h) to "H:MM AM/PM" for display
+    const time = this.formatTime(e.time);
+
+    return {
+      month,
+      day,
+      title:        e.title,
+      time,
+      location:     e.location,
+      description:  e.description,
+      registerLink: 'https://connect.meettheneedinc.org'  // links to mtnConnect app
+    };
+  }
+
+  private formatTime(time: string): string {
+    if (!time) return '';
+    const [hourStr, minStr] = time.split(':');
+    let hour = parseInt(hourStr, 10);
+    const min  = minStr || '00';
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    hour = hour % 12 || 12;
+    return `${hour}:${min} ${ampm}`;
+  }
 }

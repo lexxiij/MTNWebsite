@@ -13,6 +13,18 @@
     <h2>What's Coming Up</h2>
 
     <div class="event-list">
+      <!-- Loading state -->
+      <div class="no-events" *ngIf="loading">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Loading upcoming events...</p>
+      </div>
+
+      <!-- Error state -->
+      <div class="no-events" *ngIf="error">
+        <i class="fas fa-exclamation-circle"></i>
+        <p>Could not load events. Please check back soon.</p>
+      </div>
+
       <div class="event-row" *ngFor="let event of upcomingEvents">
         <div class="event-date-block">
           <span class="event-month">{{ event.month }}</span>
