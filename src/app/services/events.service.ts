@@ -29,7 +29,7 @@ export class EventsService {
     // retry(2) means: if the request fails, wait and try up to 2 more times.
     // This handles Render's free-tier cold start (server asleep, wakes in ~30s).
     return this.http.get<ApiEvent[]>(`${environment.apiUrl}/api/events`).pipe(
-      retry({ count: 2, delay: 5000 })  // retry twice, 5 seconds apart
+      retry({ count: 3, delay: 10000 })  // retry 3 times, 10 seconds apart (handles Render cold start)
     );
   }
 }

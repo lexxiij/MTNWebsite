@@ -46,7 +46,7 @@
       </div>
 
       <!-- Empty state shown when no upcoming events are listed -->
-      <div class="no-events" *ngIf="upcomingEvents.length === 0">
+      <div class="no-events" *ngIf="!loading && !error && upcomingEvents.length === 0">
         <i class="fas fa-calendar-alt"></i>
         <p>No upcoming events at this time. Check back soon!</p>
       </div>
