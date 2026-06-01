@@ -46,7 +46,12 @@ export class EventsComponent implements OnInit {
     this.eventsService.getEvents().subscribe({
       next: (events: ApiEvent[]) => {
         // Transform API data into what the template needs
-        this.upcomingEvents = events.map(e => this.toDisplayEvent(e));
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // compare by date only, not time
+
+        this.upcomingEvents = events
+          .filter(e => new Date(e.date + 'T00:00:00') >= today)
+          .map(e => this.toDisplayEvent(e));
         this.loading = false;
       },
       error: (err) => {
