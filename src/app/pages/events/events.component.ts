@@ -29,13 +29,13 @@ export class EventsComponent implements OnInit {
     {
       title: 'CDL & Forklift Training',
       date: 'Orientation: May 29, 2026',
-      thumb: 'assets/WSTEPFLYER.png',
+      thumb: 'assets/WSTEP_Forklift_Flyer.png',
       file: 'assets/WSTEP_Forklift_Flyer.pdf',
     },
     {
       title: 'Shipyard Welding Training',
       date: 'Orientation: June 9, 2026',
-      thumb: 'assets/WSTEPWELDING.png',
+      thumb: 'assets/WSTEP_Welding_Flyer.png',
       file: 'assets/WSTEP_Welding_Flyer.pdf',
     },
   ];
