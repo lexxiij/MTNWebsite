@@ -50,7 +50,14 @@ export class EventsComponent implements OnInit {
         today.setHours(0, 0, 0, 0); // compare by date only, not time
 
         this.upcomingEvents = events
-          .filter(e => new Date(e.date + 'T00:00:00') >= today)
+          .filter(e => {
+            // Use registrationDeadline if set, otherwise fall back to event date.
+            // Whichever comes first determines when the event disappears from the site.
+            const cutoff = e.registrationDeadline
+              ? new Date(e.registrationDeadline + 'T00:00:00')
+              : new Date(e.date + 'T00:00:00');
+            return cutoff >= today;
+          })
           .map(e => this.toDisplayEvent(e));
         this.loading = false;
       },
