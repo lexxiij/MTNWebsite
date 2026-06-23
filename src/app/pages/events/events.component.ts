@@ -33,10 +33,10 @@ export class EventsComponent implements OnInit {
       file: 'assets/WSTEP_Forklift_Flyer.pdf',
     },
     {
-      title: 'Shipyard Welding Training',
-      date: 'Orientation: June 9, 2026',
-      thumb: 'assets/WSTEP_Welding_Flyer.png',
-      file: 'assets/WSTEP_Welding_Flyer.pdf',
+      title: 'CDL Training',
+      date: 'Orientation: July 1, 2026',
+      thumb: 'assets/CDL_Flyer_July2026.png',
+      file: 'assets/CDL_Flyer_July2026.pdf',
     },
   ];
 
